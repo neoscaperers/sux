@@ -54,8 +54,6 @@
 #define RKDA    0177412
 #define RKDB    0177416
 
-#define KSP     0177706
-
 /*
  * Trap vectors
  */

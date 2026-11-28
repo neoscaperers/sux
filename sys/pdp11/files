@@ -1,1 +1,1 @@
-pdp11/init.S
+pdp11/init.S pdp11/int.S pdp11/dl11.c pdp11/startup.c pdp11/kw11.c

@@ -1,7 +1,31 @@
+/* required definitions */
+#ifndef _ASM
+struct intstate {
+    int r0;
+    int r1;
+    int r2;
+    int r3;
+    int r4;
+    int r5;
+    int sp;
+    int pc;
+    int psw;
+};
+
+extern long jiffies;
+
+extern void wait(void);
+#endif /*_ASM*/
+
+#define HZ  60
+#define PTRBASE 8
+/* machine-specific definitions */
+
+#define PRIO(n) (n << 5)
+
 /* device CSRs */
 
 /* PSW + hardware memory management CSRs */
-#define PSW     0177776
 #define SSR0    0177572
 #define SSR1    0177574
 #define SSR2    0177576
@@ -64,3 +88,9 @@
 #define TRPPWR  000024
 #define TRPEMT  000030
 #define TRPSYS  000034
+
+#ifndef _ASM
+
+void timer_init(void);
+
+#endif /*_ASM*/
